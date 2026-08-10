@@ -270,7 +270,9 @@ For additional context, the appraiser's independent NOI estimate was $1,752,000.
 figure — a good sign of consistency between the two sources.
 ```
 
-<!-- TODO: Add screen recording video here (lending_pipeline_in_action) using GitHub's native video upload -->
+
+https://github.com/user-attachments/assets/e888c6c6-f802-45fd-bff3-4856ef0e8fa4
+
 
 **Error Handling:**
 - Missing loan number: *"I couldn't find a loan number in your question. Could you include the loan number you're asking about?"*
