@@ -42,6 +42,10 @@ Rather than using traditional RAG (where the LLM searches through document embed
 - **Faster queries** - No embedding search or chunking; direct SQL lookup by loan number
 - **Confidence tracking** - Each extracted field has a confidence score (0-100)
 
+LLM-based extraction handles varied document formatting that would break rigid parsers. The sample financial statements demonstrate this - each property uses different layouts, section headers, and value formatting:
+
+![Comparison of two financial statement documents showing different formatting styles](financial_statements_comparison.png)
+
 ### The Extraction Workflow: `to_bq_pipeline.ipynb`
 
 This notebook runs the document-to-BigQuery extraction pipeline. **It was designed for GCP environments** (specifically Vertex AI Workbench) but can be adapted for local use.
@@ -123,6 +127,8 @@ Two tables in the `lending_doc_info` dataset:
 - **appraisals** - 5 rows (one per loan)
 
 Each table has: `source_filename`, `loan_number`, then field-specific columns with corresponding `_confidence` columns.
+
+![BigQuery table preview showing extracted financial statement data with confidence scores](financial_statements_bigquery.png)
 
 ---
 
@@ -263,6 +269,8 @@ For additional context, the appraiser's independent NOI estimate was $1,752,000.
 (also at 99.0 confidence), which is closely aligned with the financial statement 
 figure — a good sign of consistency between the two sources.
 ```
+
+<!-- TODO: Add screen recording video here (lending_pipeline_in_action) using GitHub's native video upload -->
 
 **Error Handling:**
 - Missing loan number: *"I couldn't find a loan number in your question. Could you include the loan number you're asking about?"*
