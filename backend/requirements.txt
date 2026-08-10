@@ -1,0 +1,7 @@
+fastapi
+uvicorn[standard]
+google-cloud-bigquery
+anthropic
+python-dotenv
+db-dtypes
+pandas

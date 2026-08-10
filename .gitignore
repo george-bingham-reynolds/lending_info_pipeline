@@ -134,3 +134,13 @@ local_settings.py
 
 # OS generated files
 .directory
+
+# Node / Frontend
+node_modules/
+dist/
+.vite/
+*.local
+
+# Frontend build artifacts
+frontend/dist/
+frontend/.vite/
