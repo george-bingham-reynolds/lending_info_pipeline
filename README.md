@@ -527,15 +527,6 @@ For local extraction, you'd need to:
 
 ---
 
-## Stack Deviations & Tradeoffs
-
-Two deliberate architecture choices reflect prioritization decisions under a tight timeline:
-
-**BigQuery over Snowflake:** I chose BigQuery instead of the Snowflake instance listed in the JD. The job description explicitly states that an ~80% stack match is sufficient, and under the time constraint, demo reliability mattered more than exact stack alignment. Migrating to Snowflake is a straightforward next step once I have access to your infrastructure - the SQL queries and data model are database-agnostic.
-
-**Anthropic API over AWS Bedrock:** I used Anthropic's API directly rather than invoking Claude through AWS Bedrock (also listed in the JD). This let me iterate faster during development without setting up AWS credentials and Bedrock permissions. The next step is swapping in Bedrock's `invoke_model` via boto3 - the extraction and grounding logic wouldn't need to change, just the client call.
-
----
 
 ## Future Enhancements
 
